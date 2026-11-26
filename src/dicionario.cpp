@@ -62,7 +62,8 @@ int menorDeTres(int a, int b, int c) {
     return menor < c ? menor : c;
 }
 
-int distanciaDeEdicao(const std::string& primeira, const std::string& segunda, int limite) {
+int distanciaDeEdicao(const std::string& primeira, const std::string& segunda,
+                      int limite) {
     std::vector<int> anterior(segunda.size() + 1);
     std::vector<int> atual(segunda.size() + 1);
     for (size_t j = 0; j <= segunda.size(); j++) {
@@ -73,7 +74,8 @@ int distanciaDeEdicao(const std::string& primeira, const std::string& segunda, i
         int menorDaLinha = atual[0];
         for (size_t j = 1; j <= segunda.size(); j++) {
             int troca = primeira[i - 1] == segunda[j - 1] ? 0 : 1;
-            atual[j] = menorDeTres(anterior[j] + 1, atual[j - 1] + 1, anterior[j - 1] + troca);
+            atual[j] = menorDeTres(anterior[j] + 1, atual[j - 1] + 1,
+                                   anterior[j - 1] + troca);
             if (atual[j] < menorDaLinha) {
                 menorDaLinha = atual[j];
             }

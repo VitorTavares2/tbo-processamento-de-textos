@@ -59,7 +59,8 @@ void ModeloQuadrigramas::treinar(const std::string& texto) {
     }
 }
 
-double ModeloQuadrigramas::pontuar(const std::vector<int>& cifradas, const int* mapa) const {
+double ModeloQuadrigramas::pontuar(const std::vector<int>& cifradas,
+                                   const int* mapa) const {
     double pontuacao = 0;
     int indice = 0;
     for (size_t i = 0; i < cifradas.size(); i++) {
@@ -79,7 +80,8 @@ long long ModeloQuadrigramas::letrasDeTreino() const {
     return totalLetras;
 }
 
-double subirMorro(const std::vector<int>& cifradas, const ModeloQuadrigramas& modelo, int* mapa, int& trocasAceitas) {
+double subirMorro(const std::vector<int>& cifradas, const ModeloQuadrigramas& modelo,
+                  int* mapa, int& trocasAceitas) {
     double atual = modelo.pontuar(cifradas, mapa);
     bool melhorou = true;
     while (melhorou) {
@@ -104,7 +106,8 @@ double subirMorro(const std::vector<int>& cifradas, const ModeloQuadrigramas& mo
     return atual;
 }
 
-ResultadoQuebra quebrarCifra(const std::string& cifrado, const ModeloQuadrigramas& modelo, std::mt19937& gerador) {
+ResultadoQuebra quebrarCifra(const std::string& cifrado, const ModeloQuadrigramas& modelo,
+                             std::mt19937& gerador) {
     std::vector<int> cifradas = extrairLetras(normalizarParaCifra(cifrado), LETRAS_DA_AMOSTRA);
 
     std::vector<long long> contagemCifrada(TAMANHO_ALFABETO, 0);

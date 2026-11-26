@@ -173,13 +173,15 @@ std::string descomprimir(const std::string& comprimido) {
 
     saida.reserve(static_cast<size_t>(total));
     int no = arvore.raiz;
-    for (size_t i = TAMANHO_CABECALHO; i < comprimido.size() && static_cast<long long>(saida.size()) < total; i++) {
+    long long produzidos = 0;
+    for (size_t i = TAMANHO_CABECALHO; i < comprimido.size() && produzidos < total; i++) {
         unsigned char byte = static_cast<unsigned char>(comprimido[i]);
-        for (int bit = 7; bit >= 0 && static_cast<long long>(saida.size()) < total; bit--) {
+        for (int bit = 7; bit >= 0 && produzidos < total; bit--) {
             bool um = (byte >> bit) & 1;
             no = um ? arvore.nos[no].direita : arvore.nos[no].esquerda;
             if (arvore.nos[no].simbolo != -1) {
                 saida += static_cast<char>(arvore.nos[no].simbolo);
+                produzidos++;
                 no = arvore.raiz;
             }
         }

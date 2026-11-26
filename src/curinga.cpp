@@ -10,7 +10,8 @@ bool temCuringa(const std::string& padrao) {
     return false;
 }
 
-std::vector<int> buscarComCuringa(const std::string& texto, const std::string& padrao) {
+std::vector<int> buscarComCuringa(const std::string& texto,
+                                  const std::string& padrao) {
     std::vector<int> encontradas;
     if (padrao.empty() || padrao.size() > texto.size()) {
         return encontradas;
