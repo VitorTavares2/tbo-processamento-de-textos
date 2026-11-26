@@ -1,0 +1,9 @@
+A importância da busca em textos
+
+Todos os dias, milhões de pessoas fazem uma pesquiza na internet sem pensar no que acontece por trás da tela. Quando alguém digita uma palavra, o sistema precisa emcontrar, em poucos instantes, todos os documentos que a contém. Para isso, os programadores ultilizam algoritmos que evitam comparar o texto letra por letra de forma ingênua.
+
+O algorítmo de Knuth, Morris e Pratt é um bom exemplo. Ele nunca volta atrás no texto, porque aproveita o que já foi comparado. Sem essa ideia, uma busca simples pode se tornar muito lenta, e os usuários ficariam anciosos esperando a resposta. Por isso, é um previlégio estudar essas técnicas logo no começo do curso.
+
+Outro problema comum é a correção ortográfica. Quando o corretor encontra uma palavra que não está no dicionário, ele precisa advinhar qual palavra a pessoa quis escrever. A solução mais usada é medir a distância entre as palavras, contando quantas letras precisam ser trocadas, inseridas ou apagadas. Essa medida é chamada de distância de edição, e ela permite sugerir correções com bastante precisão, mesmo quando o erro é grave.
+
+Por fim, a compressão de dados também depende de boas estruturas. O código de Huffman dá códigos curtos para as letras frequentes e códigos longos para as raras. Com isso, um arquivo pode ficar bem menor, sem perder nehuma informação, o que é uma exceção entre as técnicas de compressão de imagem, que geralmente perdem detalhes.

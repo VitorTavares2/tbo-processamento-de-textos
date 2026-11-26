@@ -1,0 +1,7 @@
+*.exe
+*.o
+dados/cifrado.txt
+dados/chave.txt
+dados/decifrado.txt
+dados/comprimido.huf
+dados/descomprimido.txt
